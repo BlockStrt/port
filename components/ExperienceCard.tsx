@@ -22,7 +22,7 @@ function ExperienceCard({}: Props) {
        viewport={{once: true}}
         className=''>
         <Image className='w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center ' 
-        src={mirrorman} width={100} height={100} />
+        src={mirrorman} width={100} height={100} alt='faces' />
        </motion.div>
     </article>
   )
