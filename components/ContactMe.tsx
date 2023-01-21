@@ -1,6 +1,8 @@
 import React from 'react'
 import {PhoneIcon, MapPinIcon, EnvelopeIcon} from '@heroicons/react/24/solid'
 import {useForm, SubmitHandler} from 'react-hook-form'
+// import {yupResolver} from '@hookform/resolvers/yup'
+// import * as yup from 'yup'
 
 type Props = {}
 type Inputs = {
@@ -9,6 +11,15 @@ type Inputs = {
     subject: string;
     message: string;
   };
+//   const schema = yup
+//   .object()
+//   .shape({
+//     name: yup.string().required(),
+//     email: yup.string().required(),
+//     subject: yup.string().required(),
+//     message: yup.string().required(),
+//   })
+//   .required();
 
 export default function ContactMe({}: Props) {
     const { register, handleSubmit,} = useForm<Inputs>();
