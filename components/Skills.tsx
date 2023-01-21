@@ -27,8 +27,17 @@ export default function Skills({}: Props) {
 
             <div className='grid grid-cols-4 gap-5'>
                 <Skill />
-                
-               
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
+                <Skill />
             </div>
     </motion.div>
   )

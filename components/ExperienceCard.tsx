@@ -29,7 +29,7 @@ function ExperienceCard({}: Props) {
             <h4 className='text-4l font-light'>CEO of Anniversary Group</h4>
             <p className='font-bold text-2xl mt-1'>Anniversary Group</p>
             <div className='flex space-x-2 my-2'>
-                <Image className='h-10 w-10 rounded-full'  className='h-10 w-10 rounded-full'src={anniversary} width={100} height={100} alt='anni'/>
+                <Image className='h-10 w-10 rounded-full'  src={anniversary} width={100} height={100} alt='anni'/>
                 <Image className='h-10 w-10 rounded-full' src={anniversary} width={100} height={100} alt='anni'/>
                 <Image className='h-10 w-10 rounded-full' src={anniversary} width={100} height={100} alt='anni'/>
              
