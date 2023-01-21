@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import WorkExperience from '@/components/WorkExperience'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -29,6 +30,9 @@ export default function Home() {
        </section>
 
        {/* experience */}
+       <section id='experience' className='snap-center'>
+        <WorkExperience/>
+       </section>
 
        {/* skills */}
 
