@@ -17,7 +17,7 @@ export default function Projects({}: Props) {
             <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
             z-20 '>
                 {projects.map((project) => (
-                    <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center
+                    <div key={project} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center
                     justify-center p-20 md:p-44 h-screen'>
                         <Image src={mockup} width={100} height={100} alt='project'/>
 
