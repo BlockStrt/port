@@ -6,6 +6,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
 
 type Props = {}
+const face = 'https://cdn.sanity.io/images/74w6p0rn/production/0a42dc30669eeb70ba6785605690b218c2acf923-1024x1024.jpg'
 
 function Hero({}: Props) {
 
@@ -22,7 +23,7 @@ function Hero({}: Props) {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles/>
-      <Image className='relative rounded-full h-32 w-32 mx-auto object-cover' src='/face.JPG' width={100} height={100} alt='image'
+      <Image className='relative rounded-full h-32 w-32 mx-auto object-cover' src={face} width={100} height={100} alt='image'
       />
       <div className='z-20'>
       <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Engineer</h2>
