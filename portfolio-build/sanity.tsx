@@ -1,9 +1,18 @@
-import sanityClient from '@sanity/client'
+import { createClient } from 'next-sanity'
+import createImageUrlBuilder from '@sanity/image-url'
 
-export default sanityClient({
- projectId: 'port',
- dataset: 'portdata',
- apiVersion: '2021-08-31',
- token: 'sanity-auth-token',
- useCdn: true // `false` if you want to ensure fresh data
-});
+
+
+ export const config = {
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "pv8y60vp",
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+    apiVersion: "2022-11-16" ,// https://www.sanity.io/docs/api-versioning
+    useCdn: process.env.Node_ENV === 'production'
+ }
+
+  export const sanityClient = createClient(config);
+
+  export const urlFor = (source:any) => 
+  createImageUrlBuilder(config).image(source);
+
+
