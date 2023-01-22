@@ -1,4 +1,3 @@
-import {defineField, defineType} from 'sanity'
 
 export default {
   name: 'experience',
