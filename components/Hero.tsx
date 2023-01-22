@@ -4,15 +4,20 @@ import Link from 'next/link'
 // import face from '../public/face.JPG'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
+import { PageInfo } from '@/typings'
+import pageInfo from '@/portfolio-build/schemas/pageInfo'
+import { urlFor } from '@/sanity'
 
-type Props = {}
-const face = 'https://cdn.sanity.io/images/74w6p0rn/production/0a42dc30669eeb70ba6785605690b218c2acf923-1024x1024.jpg'
+type Props = {
+  pageInfo: PageInfo
+}
 
-function Hero({}: Props) {
+
+function Hero({pageInfo}: Props) {
 
     const [text, count] = useTypewriter({
         words: [
-            'Hey, Josh here', 
+            `Hey, ${pageInfo?.name} here`, 
             'Guy-who-loves-Coffee.jsx', 
             '<LovesToCodeMore />'
         ],
@@ -23,10 +28,10 @@ function Hero({}: Props) {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles/>
-      <Image className='relative rounded-full h-32 w-32 mx-auto object-cover' src={face} width={100} height={100} alt='image'
+      <Image className='relative rounded-full h-32 w-32 mx-auto object-cover' src={urlFor(pageInfo.profilePic).url()} width={100} height={100} alt='image'
       />
       <div className='z-20'>
-      <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Engineer</h2>
+      <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo.role}</h2>
       <h1>
       <span className='text-5xl lg:text-6xl font-semibold px-10 mx-auto'>{text}</span>
       <Cursor cursorColor='#F7AB0A'/>

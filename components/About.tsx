@@ -1,11 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { PageInfo } from '@/typings'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 const img = 'https://cdn.sanity.io/images/74w6p0rn/production/1dfbc6a7078ac710aa88b2fdec65e2c1d5721a12-1024x1024.jpg'
 
-function About({}: Props) {
+function About({pageInfo}: Props) {
   return (
     <motion.div
     initial={{
@@ -44,10 +47,7 @@ function About({}: Props) {
         <div className='space-y-10 px-0 md:px-10'>
           <h4 className='text-4xl font-semibold'>  Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span>  background
           </h4>
-          <p className='text-base'>Web developer with nearly 2 years experience currently working on expanding development knowledge 
-           across all technologies. Seeking to leverage technical/creative skill to progress the work flow of teams. Leveraging 
-          my creative vision to design real world applications guiding me to unlock great potential 
-          when it comes to building.</p>
+          <p className='text-base'>{pageInfo?.backgroundInformation}</p>
         </div>
 
         </motion.div>

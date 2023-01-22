@@ -35,25 +35,25 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
         <meta name="description" content="Joshua's Portfolio" />
       </Head>
   
-      <Header/>
+      <Header socials={socials}/>
 
   
        <section id='hero' className='snap-start'>
-        <Hero/>
+        <Hero pageInfo={pageInfo}/>
        </section>
       
        <section id='about' className='snap-center'>
-        <About/>
+        <About pageInfo={pageInfo}/>
        </section>
 
      
        <section id='experience' className='snap-center'>
-        <WorkExperience/>
+        <WorkExperience experiences={experiences}/>
        </section>
 
       
         <section id='skills' className='snap-start'>
-        <Skills/>
+        <Skills skills={skills}/>
         </section>
      
        <section id='projects' className='snap-center'>
@@ -89,14 +89,18 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const projects: Project[] = await fetchProjects();
     const socials: Social[] = await fetchSocials();
 
-    return{
+    return{ 
       props: {
         pageInfo,
         experiences,
         skills,
         projects,
         socials,
-      }
+      },
+      // Next.js will attempt to re-generate the page:
+      // - when a request comes in
+      // - at most once every 10 secs
+      revalidate: 10,
     }
 
 }
