@@ -32,6 +32,8 @@ export default function Skills({skills}: Props) {
               {skills?.map(skill => (
                 <Skill key={skill._id} skill={skill}/>
               ))}
+
+              
           
             </div>
     </motion.div>

@@ -1,12 +1,17 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { Project } from '@/typings'
 
-type Props = {}
+import { urlFor } from '@/sanity'
+
+type Props = {
+    projects: Project[];
+}
 const mockup ='https://cdn.sanity.io/images/74w6p0rn/production/2109cfb0a6017913286ea3e2cde72501c4989ec6-4000x2500.jpg'
 
-export default function Projects({}: Props) {
-    const projects = [1,2,3,4,5]
+export default function Projects({ projects }: Props) {
+
   return (
     
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row
@@ -30,16 +35,17 @@ export default function Projects({}: Props) {
                     viewport={{once: true}}
                      key={project} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center
                     justify-center p-20 md:p-44 h-screen'>
-                        <Image src={mockup} width={100} height={100} alt='project'/>
+                        <Image src={urlFor(project?.image).url()} width={400} height={400} alt='project'/>
 
                         <div className='space-y-10 px-0 md:px-10 max-w-6xl' >
                             <h4 className='text-4xl font-semibold text-center'>
-                                <span className='underline decoration-[#F7AB0A]/50'>Case Study {i + 1} of {projects.length}:</span> 
-                            UPS Clone
+                                <span className='underline decoration-[#F7AB0A]/50'>Case Study {i + 1} of {projects.length}:</span> {" "}
+                            {project.title}
                             </h4>
+                          
 
-                            <p className='text-lg text-center md:text-left'>
-                            Morbi felis sem, convallis vel eros id, tincidunt hendrerit eros. Nunc blandit molestie efficitur. Morbi euismod mauris vitae dictum lobortis. Nunc ut metus sed sapien mollis vestibulum. In bibendum auctor nisi. Nunc fermentum quam vel dolor tempor commodo. Nunc aliquet scelerisque felis, eu tincidunt nisl ultricies vel. Nulla non nulla eget mi commodo pretium aliquam ac nisl.
+                            <p className='text-lg text-center'>
+                            {project.summary}
                             </p>
                         </div>
                     </motion.div>
