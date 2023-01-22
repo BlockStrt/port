@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity'
 
 type Props = {
- skill: Skill;
+ skill: typeof Skill;
  directionLeft?: boolean;
 }
 
