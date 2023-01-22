@@ -1,10 +1,10 @@
-import {defineConfig} from 'sanity'
+
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
 import {media} from 'sanity-plugin-media'
 import { visionTool } from '@sanity/vision'
 
-export default defineConfig({
+const defineConfig = () => ({
   name: 'port',
   title: 'portproj',
 
@@ -17,3 +17,4 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+export default defineConfig
