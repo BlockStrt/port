@@ -1,9 +1,10 @@
-import {createClient} from 'next-sanity'
+import { createClient } from 'sanity'
 import createImageUrlBuilder from '@sanity/image-url'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID // "pv8y60vp"
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET // "production"
 const apiVersion = "2022-11-16";
+
  export const config = {
     projectId,
     dataset,
@@ -15,3 +16,5 @@ const apiVersion = "2022-11-16";
 
   export const urlFor = (source:any) => 
   createImageUrlBuilder(config).image(source);
+
+export { createClient };
