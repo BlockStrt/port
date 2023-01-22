@@ -52,7 +52,6 @@ function ExperienceCard({experience}: Props) {
               {experience.points.map((point, i) => (
                 <li key={i}>{point}</li>
               ) )}
-                <li>Summary points</li>
             
             </ul>
         </div>
