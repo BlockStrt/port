@@ -2,10 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { urlFor } from '@/sanity'
-import { Skill } from '@/typings'
+import { Skill as Skillset} from '@/typings'
 
 type Props = {
- skill: Skill;
+ skill: Skillset;
  directionLeft?: boolean;
 }
 
