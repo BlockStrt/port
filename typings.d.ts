@@ -5,6 +5,28 @@ interface SanityBody {
     _updatedAt: string;
 }
 
+interface WorkspaceOptions {
+    name: string
+    title: string
+    projectId: string
+    dataset: string
+    plugins?: PluginOptions[]
+    schema?: SchemaPluginOptions
+    document?: DocumentPluginOptions
+    tools?: Tool[] | ComposableOption<Tool[], ConfigContext>
+    form?: SanityFormConfig
+    basePath?: string
+    subtitle?: string
+    logo?: React.ComponentType
+    icon?: React.ComponentType
+    navbar?: {
+      components?: {
+        ToolMenu: React.ComponentType<ToolMenuProps>
+      }
+    }
+    theme?: StudioTheme
+  }
+
 interface Image {
     _type: 'image';
     asset: {
