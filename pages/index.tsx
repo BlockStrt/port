@@ -17,7 +17,7 @@ import { fetchProjects } from '@/utils/fetchProjects'
 import { fetchExperience } from '@/utils/fetchExperiences'
 import { fetchSocials } from '@/utils/fetchSocials'
 
-const anni = 'https://cdn.sanity.io/images/74w6p0rn/production/2a446e8bb6b78b0c0678d90d00939fdad59e2d64-2000x2000.jpg'
+const anni = 'https://cdn.sanity.io/images/7fnjll7q/production/2a446e8bb6b78b0c0678d90d00939fdad59e2d64-2000x2000.jpg'
 type Props ={
   pageInfo: PageInfo;
   experiences: Experience[];

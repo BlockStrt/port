@@ -6,7 +6,7 @@ import { PageInfo } from '@/typings'
 type Props = {
   pageInfo: PageInfo
 }
-const img = 'https://cdn.sanity.io/images/74w6p0rn/production/1dfbc6a7078ac710aa88b2fdec65e2c1d5721a12-1024x1024.jpg'
+const img = 'https://cdn.sanity.io/images/7fnjll7q/production/1dfbc6a7078ac710aa88b2fdec65e2c1d5721a12-1024x1024.jpg'
 
 function About({pageInfo}: Props) {
   return (
