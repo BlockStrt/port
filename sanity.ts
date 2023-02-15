@@ -1,11 +1,12 @@
-import { createClient, ClientConfig } from 'next-sanity'
+import { createClient, ClientConfig, SanityClientLike } from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
 
 interface CustomClientConfig extends ClientConfig {
    exclude?: RegExp[]
  }
+ type CustomSanityClientLike = SanityClientLike & CustomClientConfig
 
- export const config:  CustomClientConfig = {
+ export const config:  CustomSanityClientLike = {
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "pv8y60vp",
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
     apiVersion: "2022-11-16" ,// https://www.sanity.io/docs/api-versioning
