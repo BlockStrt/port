@@ -45,6 +45,7 @@ export interface PageInfo extends SanityBody {
     name: string;
     phoneNumber: string;
     profilePic: Image;
+    pageInfo: PageInfo[];
 }
 
 export interface Technology extends SanityBody {
