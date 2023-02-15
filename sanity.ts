@@ -1,10 +1,10 @@
-import { createClient, ClientConfig, SanityClientLike } from 'next-sanity'
+import { createClient, ClientConfig, SanityClient } from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
 
 interface CustomClientConfig extends ClientConfig {
    exclude?: RegExp[]
  }
- type CustomSanityClientLike = SanityClientLike & CustomClientConfig
+ type CustomSanityClientLike = SanityClient & CustomClientConfig
 
  export const config:  CustomSanityClientLike = {
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "pv8y60vp",
