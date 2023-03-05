@@ -9,7 +9,8 @@ const query = groq`
   `;
 
 type Data = {
-    pageInfo: PageInfo
+    pageInfo: PageInfo;
+   
 }
 
 export default async function handler(
@@ -17,7 +18,7 @@ export default async function handler(
     res: NextApiResponse<Data>
   ) {
     const pageInfo: PageInfo = await sanityClient.fetch(query);
-    res.status(200).json({ pageInfo })
+    res.status(200).json({ pageInfo });
   }
   
 
