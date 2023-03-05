@@ -10,7 +10,7 @@ import { urlFor } from '@/sanity'
 
 type Props = {
   pageInfo: PageInfo
-}
+};
 
 
 function Hero({pageInfo}: Props) {
@@ -18,8 +18,8 @@ function Hero({pageInfo}: Props) {
     const [text, count] = useTypewriter({
         words: [
             `Hey, ${pageInfo?.name} here`, 
-            'Guy-who-loves-Coffee.jsxx', 
-            '<LovesToCodeMore />'
+            'Guy-who-loves-Code.jsxx', 
+            '<LovesLifeMore />'
         ],
         loop: true,
         delaySpeed: 2000,

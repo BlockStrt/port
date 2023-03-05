@@ -19,7 +19,7 @@ import { fetchSocials } from '@/utils/fetchSocials'
 
 const anni = 'https://cdn.sanity.io/images/7fnjll7q/production/2a446e8bb6b78b0c0678d90d00939fdad59e2d64-2000x2000.jpg'
 type Props ={
-  pageInfo: PageInfo[];
+  pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
   projects: Project[];
@@ -83,7 +83,7 @@ export default Home
 
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const pageInfo: PageInfo[] = await fetchPageInfo();
+    const pageInfo: PageInfo = await fetchPageInfo();
     const experiences: Experience[] = await fetchExperience();
     const skills: Skill[] = await fetchSkills();
     const projects: Project[] = await fetchProjects();
