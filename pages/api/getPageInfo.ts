@@ -9,7 +9,7 @@ const query = groq`
   `;
 
 type Data = {
-    pageInfo: PageInfo[]
+    pageInfo: PageInfo
 }
 
 export default async function handler(
